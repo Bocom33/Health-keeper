@@ -12,7 +12,8 @@ class UserFixtures extends Fixture
     const USER = [
         'email' => 'user@gmail.com',
         'roles' => ['ROLE_USER'],
-        'name'  => 'Ludo',
+        'forname' => 'Ludo',
+        'name'  => 'Martin',
     ];
 
     const PASSWORD_USER = 'oui';
@@ -29,6 +30,7 @@ class UserFixtures extends Fixture
         $user = new User();
 
         $user->setEmail(self::USER['email'])
+            ->setForname(self::USER['forname'])
             ->setName(self::USER['name'])
             ->setPassword($this->passwordEncoder->encodePassword(
                 $user,

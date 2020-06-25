@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PainIntensity index{% endblock %}
+
+{% block body %}
+    <h1>PainIntensity index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Level</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pain_intensity in pain_intensities %}
+            <tr>
+                <td>{{ pain_intensity.id }}</td>
+                <td>{{ pain_intensity.level }}</td>
+                <td>
+                    <a href="{{ path('pain_intensity_show', {'id': pain_intensity.id}) }}">show</a>
+                    <a href="{{ path('pain_intensity_edit', {'id': pain_intensity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pain_intensity_new') }}">Create new</a>
+{% endblock %}

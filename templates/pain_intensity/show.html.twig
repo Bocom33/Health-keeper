@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PainIntensity{% endblock %}
+
+{% block body %}
+    <h1>PainIntensity</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pain_intensity.id }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ pain_intensity.level }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pain_intensity_index') }}">back to list</a>
+
+    <a href="{{ path('pain_intensity_edit', {'id': pain_intensity.id}) }}">edit</a>
+
+    {{ include('pain_intensity/_delete_form.html.twig') }}
+{% endblock %}

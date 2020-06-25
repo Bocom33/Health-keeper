@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AnnoyanceZone index{% endblock %}
+
+{% block body %}
+    <h1>AnnoyanceZone index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annoyance_zone in annoyance_zones %}
+            <tr>
+                <td>{{ annoyance_zone.id }}</td>
+                <td>{{ annoyance_zone.name }}</td>
+                <td>
+                    <a href="{{ path('annoyance_zone_show', {'id': annoyance_zone.id}) }}">show</a>
+                    <a href="{{ path('annoyance_zone_edit', {'id': annoyance_zone.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('annoyance_zone_new') }}">Create new</a>
+{% endblock %}

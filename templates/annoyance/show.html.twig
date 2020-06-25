@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annoyance{% endblock %}
+
+{% block body %}
+    <h1>Annoyance</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ annoyance.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ annoyance.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('annoyance_index') }}">back to list</a>
+
+    <a href="{{ path('annoyance_edit', {'id': annoyance.id}) }}">edit</a>
+
+    {{ include('annoyance/_delete_form.html.twig') }}
+{% endblock %}

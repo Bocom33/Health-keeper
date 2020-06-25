@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Annoyance{% endblock %}
+
+{% block body %}
+    <h1>Create new Annoyance</h1>
+
+    {{ include('annoyance/_form.html.twig') }}
+
+    <a href="{{ path('annoyance_index') }}">back to list</a>
+{% endblock %}

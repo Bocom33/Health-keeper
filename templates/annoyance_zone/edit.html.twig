@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AnnoyanceZone{% endblock %}
+
+{% block body %}
+    <h1>Edit AnnoyanceZone</h1>
+
+    {{ include('annoyance_zone/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('annoyance_zone_index') }}">back to list</a>
+
+    {{ include('annoyance_zone/_delete_form.html.twig') }}
+{% endblock %}

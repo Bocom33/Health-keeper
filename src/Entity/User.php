@@ -6,11 +6,13 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
 {
@@ -34,6 +36,8 @@ class User implements UserInterface
      */
     private $roles = [];
 
+    private $plainPassword;
+
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
@@ -49,6 +53,11 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity=MedicalRecord::class, mappedBy="user")
      */
     private $medicalRecords;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $forname;
 
     public function __construct()
     {
@@ -117,6 +126,25 @@ class User implements UserInterface
     }
 
     /**
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     * @return User
+     */
+    public function setPlainPassword(string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
+    }
+
+    /**
      * @see UserInterface
      */
     public function getSalt()
@@ -172,6 +200,18 @@ class User implements UserInterface
                 $medicalRecord->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getForname(): ?string
+    {
+        return $this->forname;
+    }
+
+    public function setForname(string $forname): self
+    {
+        $this->forname = $forname;
 
         return $this;
     }

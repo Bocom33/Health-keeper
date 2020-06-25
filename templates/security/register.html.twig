@@ -1,0 +1,12 @@
+{{ form_start(register) }}
+
+    {{ form_row(register.forname) }}
+    {{ form_row(register.name) }}
+    {{ form_row(register.email) }}
+    {{ form_row(register.plainPassword.first) }}
+    {{ form_row(register.plainPassword.second) }}
+
+<div class="row">
+    <button type="submit" class="btn btn-primary align-self-end">Créer mon compte</button>
+</div>
+{{ form_end(register) }}
