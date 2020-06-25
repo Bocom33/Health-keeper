@@ -29,6 +29,11 @@ class Annoyance
      */
     private $medicalRecords;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function __construct()
     {
         $this->medicalRecords = new ArrayCollection();

@@ -1,12 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style>
+    .card-register {
+        max-width: 65vh;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
+        text-align: center !important;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .input-group-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-group-prepend {
+        width: 100%;
+        height: 38px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+        width: 50vh;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    .divider-text {
+        position: relative;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .divider-text span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;
+        z-index: 2;
+    }
+    .divider-text:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }
+
+    .btn-center {
+        display: flex;
+        align-items: center;
+    }
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+
+    {% form_theme register 'bootstrap_4_layout.html.twig' %}
+
 {{ form_start(register) }}
 
-    {{ form_row(register.forname) }}
-    {{ form_row(register.name) }}
-    {{ form_row(register.email) }}
-    {{ form_row(register.plainPassword.first) }}
-    {{ form_row(register.plainPassword.second) }}
+    <div class="card bg-light">
+        <article class="card-body card-register mx-auto">
+            <h4 class="card-title mt-3 text-center">Créez votre compte Health-Keeper gratuitement</h4>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    {{ form_row(register.forname) }}
+                    {{ form_row(register.name) }}
+                </div>
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    {{ form_row(register.email) }}
+                </div>
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    {{ form_row(register.plainPassword) }}
+                </div>
+            </div>
+            <div>
+                {{ form_row(register.agreeTerms) }}
+            </div>
 
-<div class="row">
-    <button type="submit" class="btn btn-primary align-self-end">Créer mon compte</button>
-</div>
-{{ form_end(register) }}
+            <div class="form-group">
+                <a href="{{ path('body') }}" class="btn btn-primary btn-block"> Créez votre compte </a>
+            </div>
+        </article>
+    </div>
+
+{% endblock %}

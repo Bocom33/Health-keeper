@@ -34,6 +34,11 @@ class PainIntensity
         $this->medicalRecords = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return (string)$this->level;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

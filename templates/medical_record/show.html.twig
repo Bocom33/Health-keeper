@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <p>{{ medical_record.user.name }} {{ medical_record.user.forname }}</p>
+    <p>{{ medical_record.annoyancezone.name }}</p>
+    <p>{{ medical_record.annoyance.name }}</p>
+    <p> {{ medical_record.details}}</p>
+
+{% endblock %}

@@ -10,10 +10,13 @@ use Doctrine\Persistence\ObjectManager;
 class AnnoyanceZoneFixtures extends Fixture
 {
     const ANNOYANCESZONES = [
-        'Tête',
-        'Bras',
-        'Jambes',
-        'Mains',
+        'tete',
+        'epaule',
+        'torse',
+        'bras',
+        'main',
+        'ventre',
+        'jambe',
     ];
     public function load(ObjectManager $manager)
     {
