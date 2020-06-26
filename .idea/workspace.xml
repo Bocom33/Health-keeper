@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2735773f-4d63-4167-bce5-bc945f1d8989" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BodyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BodyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AnnoyanceFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AnnoyanceFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AnnoyanceZoneFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AnnoyanceZoneFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MedicalRecordType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MedicalRecordType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medical/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medical/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medical_record/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medical_record/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medical_record/show_all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medical_record/show_all.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +139,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1dlcUb7o1QNDRdxNnd33R994IT8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -143,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../audi-dbf/bordeaux-0320-php-dbf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projet3/bordeaux-0320-php-jobtech" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -184,10 +191,10 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="566" y="211" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1533.873@67.27.1533.873" timestamp="1593026946592" />
-    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593079112724">
+    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593126894884">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1593079112724" />
+    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1593126894884" />
     <state x="493" y="166" width="687" height="593" key="NewPhpClassDialog" timestamp="1593078440141">
       <screen x="67" y="27" width="1533" height="873" />
     </state>

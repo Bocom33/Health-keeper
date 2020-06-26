@@ -2,11 +2,50 @@
 
 {% block title %}{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        .text-recap {
+            display: flex;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+
 {% block body %}
+    <h1 class="text-recap">Voici l'ensemble de vos récapitulatifs</h1>
+
+<h2>{{ records[0].user.forname }} {{ records[0].user.name }} </h2>
+
+
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Zone concernée</th>
+                <th scope="col">Type de douleur</th>
+                <th scope="col">Détails</th>
+                <th scope="col">Intensité</th>
+                <th scope="col">Date</th>
+            </tr>
+            </thead>
+            <tbody>
     {% for medical_record in records %}
-    <p>{{ medical_record.user.name }} {{ medical_record.user.forname }}</p>
-    <p>{{ medical_record.annoyancezone.name }}</p>
-    <p>{{ medical_record.annoyance.name }}</p>
-    <p> {{ medical_record.details}}</p>
-    {% endfor %}
+            <tr>
+                <td>{{ medical_record.id }}</td>
+                <td>{{ medical_record.annoyancezone.name }}</td>
+                <td>{{ medical_record.annoyance.name }}</td>
+                <td>{{ medical_record.details}}</td>
+                <td>{{ medical_record.painintensity.level }}</td>
+                <td>{{ medical_record.createdat|date("d/m/Y") }}</td>
+            </tr>
+
+            </tbody>
+        {% endfor %}
+        </table>
+    <div class="form-group">
+        <a  class="btn btn-primary "> Contactez votre médecin </a>
+        <a href="{{ path('body') }}" class="btn btn-secondary"> Déclarer une douleur</a>
+    </div>
+
 {% endblock %}

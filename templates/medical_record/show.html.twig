@@ -1,11 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Votre récapitulatif{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .card {
+            margin-top: 5vh;
+            width: 80%;
+            margin-left: 10%;
+        }
+        .record-recap-text {
+            display: flex;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+
 
 {% block body %}
-    <p>{{ medical_record.user.name }} {{ medical_record.user.forname }}</p>
-    <p>{{ medical_record.annoyancezone.name }}</p>
-    <p>{{ medical_record.annoyance.name }}</p>
-    <p> {{ medical_record.details}}</p>
+
+    <div class="col mb-4">
+        <br>
+        <h2 class="record-recap-text">Voici le récapitulatif de votre saisie N°{{ medical_record.id }}</h2>
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-text">Nom et prénom : {{ medical_record.user.name }} {{ medical_record.user.forname }}</h3>
+                <h5 class="card-title text-turquoise">Zone de la douleur : {{ medical_record.annoyancezone.name }}</h5>
+                <h5 class="card-text">Type de douleur : {{ medical_record.annoyance.name }}</h5>
+                <h5 class="card-text">Intensité de la douleur : {{ medical_record.painintensity.level }}</h5>
+                <h5 class="card-text mt-2">
+                    <span class="text-red"></span>
+                    Les détails : {{ medical_record.details}}
+                </h5>
+            </div>
+            <div class="card-footer">
+                <p class="card-text text-turquoise">
+                    <a href="{{ path('medical_record_all') }}" class="float-right">Voir l'ensemble de mes récapitulatifs <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock %}

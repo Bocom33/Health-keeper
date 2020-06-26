@@ -15,6 +15,9 @@ class AnnoyanceFixtures extends Fixture
         'Lanciements',
         'Fourmillements',
         'Migraine',
+        'Brûlure',
+        'Coupure',
+        'Piqûre',
     ];
     public function load(ObjectManager $manager)
     {

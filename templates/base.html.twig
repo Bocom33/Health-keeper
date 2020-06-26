@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <title>{% block title %}Welcome to Health-Keeper !{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-    </head>
+</head>
+{% include('navbar.html.twig') %}
 <body>
-    {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+{% block body %}  {% endblock %}
+{% block javascripts %}{% endblock %}
 </body>
 </html>

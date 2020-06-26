@@ -13,7 +13,7 @@ class MedicalRecordType extends AbstractType
     {
         $builder
             ->add('details', null, ['label' => 'Détails à ajouter'])
-            ->add('painIntensity', null, ['label'=> 'Intensité'])
+            ->add('painIntensity', null, ['label'=> 'Intensité (10 étant insupportable)'])
             ->add('annoyance', null, ['label' => 'Type de douleur'])
         ;
     }
